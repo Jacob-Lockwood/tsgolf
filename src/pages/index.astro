@@ -1,16 +1,37 @@
 ---
-
+import Layout from "../layouts/Layout.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout title="Home - TSGolf">
+  <div class="h-screen p-20">
+    <section
+      class="h-full flex p-10 gap-20 items-center bg-gradient-to-br from-sky-600 to-indigo-950 text-white"
+    >
+      <div class="w-2/3 flex flex-col gap-5">
+        <h1 class="font-semibold text-6xl">
+          Learn to Code Golf in TypeScript's Type System
+        </h1>
+        <p class="text-xl">
+          Master the type system in 6-8 weeks <br />
+           (or, get pretty good in 10-30 minutes)
+        </p>
+      </div>
+      <img src="/typescript.svg" class="w-80" />
+    </section>
+  </div>
+  <section class="flex flex-col gap-5 mb-40 text-center">
+    <p class="text-2xl">Site Coming Soon to an Internet Near You!</p>
+    <p>
+      In the meantime, check out the
+      <a
+        class="text-blue-700 font-medium underline"
+        href="https://chat.stackexchange.com/rooms/145771/typescript-type-system"
+        >TypeScript Type System chatroom</a
+      > on
+      <a
+        class="text-blue-700 font-medium underline"
+        href="https://codegolf.stackexchange.com">Code Golf Stack Exchange</a
+      >.
+    </p>
+  </section>
+</Layout>
