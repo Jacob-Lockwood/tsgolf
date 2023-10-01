@@ -1,0 +1,21 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Page not found">
+  <main class="max-w-xl py-20 mx-auto flex flex-col gap-5">
+    <code class="text-neutral-600 font-mono">
+      type PageAt&lt;URL&gt;=`Error 404: There is no page at $&lcub;URL&rcub;`
+    </code>
+    <h1 class="text-4xl font-bold">
+      Sorry golfer, but your types are in another script.
+    </h1>
+    <p>
+      You've got the wrong URL, bud. Or I screwed up. But let's just agree and
+      say it's all your fault.
+    </p>
+    <p class="text-sm">
+      (If you think this is a bug, <a>open an issue on the GitHub repo</a>.)
+    </p>
+  </main>
+</Layout>
