@@ -7,6 +7,7 @@ tips:
     String types
     Tuple and Array types
     Object types
+    Recursive types
   beginner:
     String utilities (Lowercase,...)
     Conditional types with tuples
