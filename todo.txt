@@ -1,0 +1,19 @@
+general:
+  explain what this is on the homepage
+
+tips:
+  fundamental:
+    Number types
+    String types
+    Tuple and Array types
+    Object types
+  beginner:
+    String utilities (Lowercase,...)
+    Conditional types with tuples
+    Conditional types with strings
+  intermediate:
+
+examples:
+  !dlroW ,olleH
+  Palindrome checker
+  Repeat string N times
