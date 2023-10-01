@@ -8,4 +8,15 @@ const examples = defineCollection({
   }),
 });
 
-export const collections = { examples };
+const tips = defineCollection({
+  type: "content",
+  schema: z.object({
+    title: z.string(),
+    skill: z
+      .literal("beginner")
+      .or(z.literal("intermediate"))
+      .or(z.literal("advanced")),
+  }),
+});
+
+export const collections = { examples, tips };
