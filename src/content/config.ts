@@ -13,7 +13,8 @@ const tips = defineCollection({
   schema: z.object({
     title: z.string(),
     skill: z
-      .literal("beginner")
+      .literal("fundamental")
+      .or(z.literal("beginner"))
       .or(z.literal("intermediate"))
       .or(z.literal("advanced")),
   }),

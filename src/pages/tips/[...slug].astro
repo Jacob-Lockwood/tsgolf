@@ -14,16 +14,19 @@ type Props = InferGetStaticPropsType<typeof getStaticPaths>;
 const { entry } = Astro.props;
 const { Content } = await entry.render();
 
-const skill = entry.data.skill[0].toUpperCase() + entry.data.skill.slice(1);
+const skill =
+  entry.data.skill === "fundamental"
+    ? "Fundamentals"
+    : entry.data.skill[0].toUpperCase() + entry.data.skill.slice(1) + " Tip";
 
-const title = `${skill} Tip: ${entry.data.title}`;
+const title = `${skill}: ${entry.data.title}`;
 ---
 
 <Layout title={title}>
-  <main class="mx-auto py-20 max-w-xl">
+  <main class="mx-auto py-20 px-5 max-w-xl">
     <a href="/tsgolf/tips" class="underline"> &larr; Back to tips directory</a>
     <h1 class="text-4xl font-bold my-5">{title}</h1>
-    <div class="prose prose-lg prose-sky">
+    <div class="prose prose-sky">
       <Content />
     </div>
   </main>

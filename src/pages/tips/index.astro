@@ -4,24 +4,28 @@ import Layout from "../../layouts/Layout.astro";
 
 const entries = await getCollection("tips");
 
-const bySkill = (["beginner", "intermediate", "advanced"] as const).map(
+const bySkill = (
+  ["fundamental", "beginner", "intermediate", "advanced"] as const
+).map(
   (skill) =>
     [
-      skill[0].toUpperCase() + skill.slice(1),
+      skill === "fundamental"
+        ? "Fundamentals"
+        : skill[0].toUpperCase() + skill.slice(1) + " Tips",
       entries.filter((entry) => entry.data.skill === skill),
     ] as const,
 );
 ---
 
 <Layout title="Tips">
-  <section class="px-40 py-32">
+  <section class="px-5 py-32 max-w-6xl mx-auto">
     <h1 class="text-4xl mb-5 font-bold">Tips Directory</h1>
     <div class="flex flex-wrap gap-10 justify-between">
       {
         bySkill.map(([skill, group]) => (
           <div>
-            <h2 class="text-2xl my-5 font-semibold">{skill} tips</h2>
-            <ul>
+            <h2 class="text-2xl my-5 font-semibold">{skill}</h2>
+            <ul class="flex flex-col gap-2">
               {group.map((entry) => (
                 <li class="underline underline-offset-2">
                   <a href={"/tsgolf/tips/" + entry.slug}>{entry.data.title}</a>

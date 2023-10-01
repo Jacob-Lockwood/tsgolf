@@ -18,12 +18,12 @@ const title = `Example #${entry.slug.slice(0, 3)}: ${entry.data.title}`;
 ---
 
 <Layout title={title}>
-  <main class="mx-auto py-20 max-w-xl">
+  <main class="mx-auto py-20 px-5 max-w-xl">
     <a href="/tsgolf/examples" class="underline">
       &larr; Back to examples directory
     </a>
     <h1 class="text-4xl font-bold my-5">{title}</h1>
-    <div class="prose prose-lg prose-sky">
+    <div class="prose prose-sky">
       <Content />
     </div>
   </main>

@@ -1,6 +1,6 @@
 ---
 title: Union types
-skill: beginner
+skill: fundamental
 ---
 
 Union types are a fundamental concept of TypeScript's Type System. A union is a
