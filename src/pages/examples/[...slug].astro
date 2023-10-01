@@ -1,0 +1,40 @@
+---
+import type { InferGetStaticPropsType } from "astro";
+import { getCollection } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+
+export async function getStaticPaths() {
+  const examples = await getCollection("examples");
+  return examples.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+type Props = InferGetStaticPropsType<typeof getStaticPaths>;
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+
+const title = `Example #${entry.slug.slice(0, 3)}: ${entry.data.title}`;
+---
+
+<Layout title={title}>
+  <main class="mx-auto py-20 max-w-xl">
+    <a href="/tsgolf/examples" class="underline">
+      &larr; Back to examples directory
+    </a>
+    <h1 class="text-4xl font-bold my-5">{title}</h1>
+    <div class="prose prose-lg prose-sky">
+      <Content />
+    </div>
+  </main>
+</Layout>
+
+<style is:global>
+  .prose :where(:not(pre)) code {
+    @apply bg-sky-50 px-1 py-0.5 rounded;
+  }
+  .prose :where(:not(pre)) code::before,
+  .prose :where(:not(pre)) code::after {
+    content: "";
+  }
+</style>

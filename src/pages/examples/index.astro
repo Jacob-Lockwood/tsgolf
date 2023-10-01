@@ -1,0 +1,32 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+
+const entries = await getCollection("examples");
+---
+
+<Layout title="Examples">
+  <section class="px-40 py-32">
+    <h1 class="text-4xl mb-5 font-bold">Examples Directory</h1>
+    <ol class="flex flex-col list-decimal ml-5 text-lg">
+      {
+        entries.map((entry) => (
+          <li class="py-2 border-b flex items-center gap-5">
+            <a
+              href={`/tsgolf/examples/${entry.slug}`}
+              class="underline underline-offset-2"
+            >
+              {entry.data.title}
+            </a>
+
+            {entry.data.has_explanation && (
+              <span class="block text-sm bg-sky-200 px-1 py-0.5">
+                Explained
+              </span>
+            )}
+          </li>
+        ))
+      }
+    </ol>
+  </section>
+</Layout>
