@@ -29,7 +29,8 @@ const { title } = Astro.props;
         </li>
       </ul>
     </nav>
-    <aside class="bg-sky-200 p-10 my-10 text-center">
+    <slot />
+    <footer class="bg-sky-200 p-5 mt-10 text-center">
       <p class="mx-auto w-80 text-lg">
         <b>Note:</b> This site is <i>under construction!</i> Many of its
         features have not been implemented yet, and a lot of the content I'm
@@ -42,8 +43,7 @@ const { title } = Astro.props;
           on GitHub.
         </a>
       </p>
-    </aside>
-    <slot />
+    </footer>
   </body>
 </html>
 
