@@ -46,3 +46,9 @@ const { title } = Astro.props;
     <slot />
   </body>
 </html>
+
+<style is:global>
+  .astro-code ::selection {
+    @apply bg-sky-100 text-sky-950;
+  }
+</style>
