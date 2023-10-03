@@ -4,8 +4,8 @@ import Layout from "../layouts/Layout.astro";
 
 <Layout title="Page not found">
   <main class="max-w-xl py-20 mx-auto flex flex-col gap-5">
-    <code class="text-neutral-600 font-mono">
-      type PageAt&lt;URL&gt;=`Error 404: There is no page at $&lcub;URL&rcub;`
+    <code class="text-neutral-600 font-mono" is:raw>
+      type PageAt&lt;URL&gt; = `Error 404: There is no page at ${URL}`
     </code>
     <h1 class="text-4xl font-bold">
       Sorry golfer, but your types are in another script.
